@@ -1,9 +1,7 @@
 version: 0.0
-Resources:
-  - myLambdaFunction:
-      Type: AWS::Lambda::Function
-      Properties:
-        Name: "HerosLambdaFunction"
-        Alias: "HerosLambdaFunctionAlias"
-        CurrentVersion: "1"
-        TargetVersion: "2"
+os: linux
+files: 
+  - source: /
+  - destination: /hero/demo/app
+permissions: 
+hooks:
