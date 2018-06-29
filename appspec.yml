@@ -1,32 +1,5 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/html
-permissions:
-  - object: /var/www/html/codedeploy-scripts
-    owner: root
-    mode: 777
-    type:
-      - directory
-hooks:
-  ApplicationStop:
-    - location: codedeploy-scripts/application-stop
-      timeout: 300
-      runas: root
-  BeforeInstall:
-    - location: codedeploy-scripts/before-install
-      timeout: 300
-      runas: root
-  AfterInstall:
-    - location: codedeploy-scripts/after-install
-      timeout: 600
-      runas: root
-  ApplicationStart:
-    - location: codedeploy-scripts/application-start
-      timeout: 300
-      runas: root
-  ValidateService:
-    - location: codedeploy-scripts/validate-service
-      timeout: 300
-      runas: root
+  - source: /src/main/java/App.java
+    destination: /Hero/App.java
